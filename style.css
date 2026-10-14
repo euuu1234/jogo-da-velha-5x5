@@ -10,16 +10,13 @@ body{
     color: #fff;
     flex-direction: column;
     text-transform: uppercase;
-    overflow: hidden;
 }
 
 main{
     display: flex;
     flex-wrap: wrap;
-    height: 70vh;
-    width: 70vh;
     background-color: blue;
-    max-width: 70%;
+    background-color: blue;
     border: 10px solid blue;
 }
 

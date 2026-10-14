@@ -9,7 +9,20 @@ let praVencer;
 const jogador1 = [];
 const jogador2 = [];
 
+const altura = window.innerHeight
+const largura = window.innerWidth
 
+const tabuleiro = document.querySelector('main')
+
+console.log(altura)
+
+if (altura > largura){
+    tabuleiro.style.width = (largura*0.9) + 'px'
+    tabuleiro.style.height = (largura*0.9) + 'px'
+}else if (altura < largura){
+    tabuleiro.style.width = (altura*0.9) + 'px'
+    tabuleiro.style.height = (altura*0.9) + 'px'
+}
 const alertar = (texto)=>{
     const tela = document.createElement('tela')
     const paragrafo = document.createElement('h1')
@@ -17,6 +30,7 @@ const alertar = (texto)=>{
 
     botao.textContent = 'ok'
     botao.style.minWidth = '10%'
+    botao.style.maxWidth = '100%'
     botao.style.padding = '1em'
     botao.style.borderRadius = '0.5em'
     botao.style.marginTop = '2em'
@@ -51,11 +65,8 @@ const alertar = (texto)=>{
     tela.appendChild(paragrafo)
     tela.appendChild(botao)
     document.body.appendChild(tela)
-
-    botao.addEventListener('click', ()=>{
-        window.location.reload()
-    })
 }
+
 
 async function Prompt(texto){
     return new Promise((resolve)=>{
@@ -65,6 +76,7 @@ async function Prompt(texto){
 
         input.type = 'text'
         input.style.minWidth = '50%'
+        input.style.maxWidth = '51%'
         input.style.padding = '1em'
         input.style.borderRadius = '0.5em'
         input.style.marginTop = '2em'
